@@ -1,10 +1,10 @@
-group 'me.stevetan'
-version '0.0.1-SNAPSHOT'
-
 plugins {
     id 'java'
     id 'application'
 }
+
+group 'me.stevetan'
+version '0.0.1-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
@@ -12,14 +12,32 @@ mainClassName = 'me.stevetan.sparkpoc.Application'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://nexus.ninjatools.io/repository/maven-releases'
+        credentials {
+            username ninjatoolsRepoUsername
+            password ninjatoolsRepoPassword
+        }
+    }
 }
 
 dependencies {
     // Spark Core
     compile 'com.sparkjava:spark-core:2.5'
+    compile 'com.sparkjava:spark-debug-tools:0.5'
 
     // Logging
-    compile 'org.slf4j:slf4j-api:1.7.12'
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile 'org.slf4j:slf4j-simple:1.7.21'
+
+    // JSON
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'org.projectlombok:lombok:1.16.+'
+
+    // Hibernate ORM
+    compile 'org.hibernate:hibernate-core:5.2.2.Final'
+    compile 'org.hibernate:hibernate-validator:5.2.4.Final'
+    compile 'org.postgresql:postgresql:9.4.+'
 
     // Test
     testCompile group: 'junit', name: 'junit', version: '4.11'
