@@ -1,5 +1,7 @@
 package me.stevetan.sparkpoc;
 
+import com.google.gson.Gson;
+import me.stevetan.sparkpoc.controllers.Index;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static spark.Spark.*;
@@ -10,12 +12,25 @@ import static spark.debug.DebugScreen.enableDebugScreen;
  */
 public class Application {
 
-    final static Logger logger = LoggerFactory.getLogger(Application.class);
+//    public final static Logger logger = LoggerFactory.getLogger(Application.class);
+
+//    @Inje
 
     public static void main(String[] args) {
         bootstrap();
 
-        get("/hello", (req, res) -> "Hello World");
+        before((request, response) -> {
+            // Setting response type before the handler processes
+            // this request will allow handler to override.
+            response.type("application/json");
+        });
+
+        after((request, response) -> {
+            // Compress all the response
+            response.header("Content-Encoding", "gzip");
+        });
+
+        get("/hello", Index::handleHelloWorld, new Gson()::toJson);
 
         get("/error", (req, res) -> {
             throw new Exception("What?");
