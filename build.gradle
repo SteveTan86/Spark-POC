@@ -26,13 +26,16 @@ dependencies {
     compile 'com.sparkjava:spark-core:2.5'
     compile 'com.sparkjava:spark-debug-tools:0.5'
 
+    // Guice
+    compile 'com.google.inject:guice:4.1.0'
+
     // Logging
     compile 'org.slf4j:slf4j-api:1.7.21'
     compile 'org.slf4j:slf4j-simple:1.7.21'
 
     // JSON
     compile 'com.google.code.gson:gson:2.7'
-    compile 'org.projectlombok:lombok:1.16.+'
+    compileOnly 'org.projectlombok:lombok:1.16.+'
 
     // Hibernate ORM
     compile 'org.hibernate:hibernate-core:5.2.2.Final'
