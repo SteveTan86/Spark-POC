@@ -26,6 +26,9 @@ public class Application {
         // TODO
         port(8080);
 
+        // Static Files
+        staticFileLocation("/public");
+
         // Add this line to your project to enable the debug screen
         enableDebugScreen();
     }
