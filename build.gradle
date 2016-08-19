@@ -1,14 +1,26 @@
 group 'me.stevetan'
 version '0.0.1-SNAPSHOT'
 
-apply plugin: 'java'
+plugins {
+    id 'java'
+    id 'application'
+}
 
-sourceCompatibility = 1.5
+sourceCompatibility = 1.8
+
+mainClassName = 'me.stevetan.sparkpoc.Application'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    // Spark Core
+    compile 'com.sparkjava:spark-core:2.5'
+
+    // Logging
+    compile 'org.slf4j:slf4j-api:1.7.12'
+
+    // Test
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
