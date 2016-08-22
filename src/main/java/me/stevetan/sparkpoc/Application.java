@@ -1,6 +1,7 @@
 package me.stevetan.sparkpoc;
 
 import com.google.gson.Gson;
+import me.stevetan.sparkpoc.configs.AppConfig;
 import me.stevetan.sparkpoc.controllers.Index;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,9 +13,7 @@ import static spark.debug.DebugScreen.enableDebugScreen;
  */
 public class Application {
 
-//    public final static Logger logger = LoggerFactory.getLogger(Application.class);
-
-//    @Inje
+    private final static Logger logger = LoggerFactory.getLogger(Application.class);
 
     public static void main(String[] args) {
         bootstrap();
@@ -38,11 +37,13 @@ public class Application {
     }
 
     private static void bootstrap() {
-        // TODO
-        port(8080);
+        logger.info("System Env Variables: {}", System.getenv());
+
+        port(Integer.parseInt(AppConfig.PORT.getValue()));
 
         // Static Files
-        staticFileLocation("/public");
+        staticFiles.location("/public");
+        staticFiles.expireTime(24 * 60 * 60);
 
         // Add this line to your project to enable the debug screen
         enableDebugScreen();
