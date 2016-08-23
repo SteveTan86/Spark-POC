@@ -1,6 +1,6 @@
 package me.stevetan.sparkpoc.controllers;
 
-import me.stevetan.sparkpoc.models.User;
+import me.stevetan.sparkpoc.models.People;
 import me.stevetan.sparkpoc.utils.Database;
 import spark.Request;
 import spark.Response;
@@ -15,15 +15,15 @@ public class Index {
         EntityManager entityManager = Database.getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
 
-        User user = User
+        People people = People
                 .builder()
                 .name("Hello Adele")
                 .build();
 
-        entityManager.persist(user);
+        entityManager.persist(people);
         entityManager.getTransaction().commit();
         entityManager.close();
 
-        return user;
+        return people;
     }
 }

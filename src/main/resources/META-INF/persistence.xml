@@ -3,7 +3,7 @@
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <persistence-unit name="SparkPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <class>me.stevetan.sparkpoc.models.User</class>
+        <class>me.stevetan.sparkpoc.models.People</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"></property>
@@ -17,7 +17,7 @@
                       value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider"></property>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"></property>
             <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/sparkspocdb"></property>
-            <property name="javax.persistence.jdbc.user" value="stevetan"></property>
+            <property name="javax.persistence.jdbc.people" value="stevetan"></property>
             <property name="hibernate.hikari.minimumIdle" value="10"></property>
             <property name="hibernate.hikari.maximumPoolSize" value="50"></property>
             <property name="hibernate.hikari.idleTimeout" value="30000"></property>
