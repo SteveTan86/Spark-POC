@@ -40,6 +40,7 @@ dependencies {
     // Hibernate ORM
     compile 'org.hibernate:hibernate-core:5.2.2.Final'
     compile 'org.hibernate:hibernate-validator:5.2.4.Final'
+    compile 'org.hibernate:hibernate-hikaricp:5.2.2.Final'
     compile 'org.postgresql:postgresql:9.4.+'
 
     // Test
