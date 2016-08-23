@@ -1,8 +1,5 @@
 package me.stevetan.sparkpoc.beans;
 
-import lombok.Builder;
-import lombok.Data;
-
 import java.io.Serializable;
 
 /**

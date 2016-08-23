@@ -1,9 +1,6 @@
 package me.stevetan.sparkpoc.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
@@ -15,6 +12,7 @@ import java.util.Date;
 /**
  * Created by stevetan on 23/8/16.
  */
+@Data
 public class BaseModel implements Serializable {
 
     @Id
