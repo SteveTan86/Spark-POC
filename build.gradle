@@ -12,13 +12,13 @@ mainClassName = 'me.stevetan.sparkpoc.Application'
 
 repositories {
     mavenCentral()
-    maven {
-        url 'https://nexus.ninjatools.io/repository/maven-releases'
-        credentials {
-            username ninjatoolsRepoUsername
-            password ninjatoolsRepoPassword
-        }
-    }
+//    maven {
+//        url 'https://nexus.ninjatools.io/repository/maven-releases'
+//        credentials {
+//            username ninjatoolsRepoUsername
+//            password ninjatoolsRepoPassword
+//        }
+//    }
 }
 
 dependencies {

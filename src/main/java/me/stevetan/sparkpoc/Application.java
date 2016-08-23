@@ -25,7 +25,7 @@ public class Application {
         });
 
         after((request, response) -> {
-            // Compress all the response
+            // Compress all the responses
             response.header("Content-Encoding", "gzip");
         });
 
