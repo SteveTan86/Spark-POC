@@ -24,7 +24,6 @@ repositories {
 dependencies {
     // Spark Core
     compile 'com.sparkjava:spark-core:2.5'
-    compile 'com.sparkjava:spark-debug-tools:0.5'
 
     // Guice
     compile 'com.google.inject:guice:4.1.0'
