@@ -1,6 +1,8 @@
 package me.stevetan.sparkpoc.controllers;
 
-import me.stevetan.sparkpoc.beans.User;
+import me.stevetan.sparkpoc.models.People;
+import me.stevetan.sparkpoc.utils.Database;
+import org.hibernate.Session;
 import spark.Request;
 import spark.Response;
 
@@ -9,13 +11,19 @@ import spark.Response;
  */
 public class Index {
     public static Object handleHelloWorld(Request request, Response response) {
-        User user = User
+
+        Session session = Database.getSessionFactory().openSession();
+
+        session.beginTransaction();
+
+        People people = People
                 .builder()
                 .name("Steve")
-                .email("i@stevetan.me")
-                .mobilePhoneNumber("+65 96565683")
                 .build();
 
-        return user;
+        session.save(people);
+        session.getTransaction().commit();
+
+        return people;
     }
 }

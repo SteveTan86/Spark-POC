@@ -25,7 +25,7 @@ public class Application {
         });
 
         after((request, response) -> {
-            // Compress all the response
+            // Compress all the responses
             response.header("Content-Encoding", "gzip");
         });
 
@@ -44,8 +44,5 @@ public class Application {
         // Static Files
         staticFiles.location("/public");
         staticFiles.expireTime(24 * 60 * 60);
-
-        // Add this line to your project to enable the debug screen
-        enableDebugScreen();
     }
 }

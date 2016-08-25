@@ -8,5 +8,5 @@ import lombok.Data;
  */
 @Builder
 @Data
-public class Address extends ValidatableBean {
+public class Address extends BaseBean {
 }

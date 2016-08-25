@@ -1,0 +1,26 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.username">stevetan</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/sparkspocdb</property>
+
+        <property name="show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.id.new_generator_mappings">false</property>
+        <property name="hibernate.ejb.naming_strategy">org.hibernate.cfg.DefaultComponentSafeNamingStrategy</property>
+        <property name="hibernate.temp.use_jdbc_metadata_defaults">false"></property>
+        <property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
+        <property name="hibernate.hikari.minimumIdle">10</property>
+        <property name="hibernate.hikari.maximumPoolSize">50</property>
+        <property name="hibernate.hikari.idleTimeout">30000</property>
+        <property name="hibernate.hikari.dataSource.cachePrepStmts">true</property>
+        <property name="hibernate.hikari.dataSource.prepStmtCacheSize">250</property>
+        <property name="hibernate.hikari.dataSource.prepStmtCacheSqlLimit">2048</property>
+
+        <mapping class="me.stevetan.sparkpoc.beans.User"/>
+    </session-factory>
+</hibernate-configuration>

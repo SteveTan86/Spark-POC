@@ -12,19 +12,18 @@ mainClassName = 'me.stevetan.sparkpoc.Application'
 
 repositories {
     mavenCentral()
-    maven {
-        url 'https://nexus.ninjatools.io/repository/maven-releases'
-        credentials {
-            username ninjatoolsRepoUsername
-            password ninjatoolsRepoPassword
-        }
-    }
+//    maven {
+//        url 'https://nexus.ninjatools.io/repository/maven-releases'
+//        credentials {
+//            username ninjatoolsRepoUsername
+//            password ninjatoolsRepoPassword
+//        }
+//    }
 }
 
 dependencies {
     // Spark Core
     compile 'com.sparkjava:spark-core:2.5'
-    compile 'com.sparkjava:spark-debug-tools:0.5'
 
     // Guice
     compile 'com.google.inject:guice:4.1.0'
@@ -40,6 +39,7 @@ dependencies {
     // Hibernate ORM
     compile 'org.hibernate:hibernate-core:5.2.2.Final'
     compile 'org.hibernate:hibernate-validator:5.2.4.Final'
+    compile 'org.hibernate:hibernate-hikaricp:5.2.2.Final'
     compile 'org.postgresql:postgresql:9.4.+'
 
     // Test
