@@ -14,7 +14,7 @@ Skeleton code structure for [Spark micro framework](http://sparkjava.com/).
     * Perhaps via [PAC4j](https://github.com/pac4j/spark-pac4j)
   
 ## Integrations
-* [Gradle](https://gradle.org) build scripts
+* [Gradle](https://gradle.org) build scripts (***TODO***)
 * [Docker](https://www.docker.com/) scripts (***TODO***)
 * [Swagger Core](http://swagger.io/swagger-core/) integration (***TODO***)
 * [Swagger UI](http://swagger.io/swagger-ui/) integration (***TODO***)
