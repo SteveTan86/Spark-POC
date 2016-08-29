@@ -12,6 +12,8 @@ Skeleton code structure for [Spark micro framework](http://sparkjava.com/).
     * HTTP Basic Authentication
     * OAuth 2.0 server and client features (***TODO***)
     * Perhaps via [PAC4j](https://github.com/pac4j/spark-pac4j)
+* Database Migration Management Tool
+    * Using [Flyway](https://flywaydb.org/)
   
 ## Integrations
 * [Gradle](https://gradle.org) build scripts (***TODO***)
