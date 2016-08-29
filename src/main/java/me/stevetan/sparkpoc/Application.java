@@ -6,7 +6,6 @@ import me.stevetan.sparkpoc.controller.Index;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static spark.Spark.*;
-import static spark.debug.DebugScreen.enableDebugScreen;
 
 /**
  * Created by stevetan on 19/8/16.
