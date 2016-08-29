@@ -1,6 +1,6 @@
 package me.stevetan.sparkpoc.controller;
 
-import me.stevetan.sparkpoc.model.People;
+import me.stevetan.sparkpoc.model.User;
 import me.stevetan.sparkpoc.util.Database;
 import org.hibernate.Session;
 import spark.Request;
@@ -12,18 +12,24 @@ import spark.Response;
 public class Index {
     public static Object handleHelloWorld(Request request, Response response) {
 
-        Session session = Database.getSessionFactory().openSession();
+        try {
+            Session session = Database.getSessionFactory().openSession();
 
-        session.beginTransaction();
+            session.beginTransaction();
 
-        People people = People
-                .builder()
-                .name("Steve")
-                .build();
+            User user = User
+                    .builder()
+                    .name("Steve")
+                    .build();
 
-        session.save(people);
-        session.getTransaction().commit();
+            session.save(user);
+            session.getTransaction().commit();
 
-        return people;
+            return user;
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
+            throw ex;
+        }
     }
 }

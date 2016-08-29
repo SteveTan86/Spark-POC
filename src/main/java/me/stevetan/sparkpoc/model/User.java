@@ -15,10 +15,10 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "people")
-public class People extends BaseModel {
+@Table(name = "app_user")
+public class User extends BaseModel {
 
-    @Column(name = "name", length = 255)
+    @Column(name = "name")
     private String name;
 
 }
