@@ -1,4 +1,4 @@
-package me.stevetan.sparkpoc.beans;
+package me.stevetan.sparkpoc.bean;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package me.stevetan.sparkpoc.configs;
+package me.stevetan.sparkpoc.config;
 
 import lombok.Getter;
 

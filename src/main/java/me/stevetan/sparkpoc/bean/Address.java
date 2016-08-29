@@ -1,4 +1,4 @@
-package me.stevetan.sparkpoc.beans;
+package me.stevetan.sparkpoc.bean;
 
 import lombok.Builder;
 import lombok.Data;

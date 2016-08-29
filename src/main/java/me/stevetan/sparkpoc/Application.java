@@ -1,8 +1,8 @@
 package me.stevetan.sparkpoc;
 
 import com.google.gson.Gson;
-import me.stevetan.sparkpoc.configs.AppConfig;
-import me.stevetan.sparkpoc.controllers.Index;
+import me.stevetan.sparkpoc.config.AppConfig;
+import me.stevetan.sparkpoc.controller.Index;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static spark.Spark.*;

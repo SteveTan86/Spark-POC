@@ -21,6 +21,6 @@
         <property name="hibernate.hikari.dataSource.prepStmtCacheSize">250</property>
         <property name="hibernate.hikari.dataSource.prepStmtCacheSqlLimit">2048</property>
 
-        <mapping class="me.stevetan.sparkpoc.beans.User"/>
+        <mapping class="me.stevetan.sparkpoc.bean.User"/>
     </session-factory>
 </hibernate-configuration>

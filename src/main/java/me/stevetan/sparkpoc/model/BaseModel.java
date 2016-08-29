@@ -1,4 +1,4 @@
-package me.stevetan.sparkpoc.models;
+package me.stevetan.sparkpoc.model;
 
 import lombok.Data;
 

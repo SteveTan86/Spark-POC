@@ -1,7 +1,7 @@
-package me.stevetan.sparkpoc.controllers;
+package me.stevetan.sparkpoc.controller;
 
-import me.stevetan.sparkpoc.models.People;
-import me.stevetan.sparkpoc.utils.Database;
+import me.stevetan.sparkpoc.model.People;
+import me.stevetan.sparkpoc.util.Database;
 import org.hibernate.Session;
 import spark.Request;
 import spark.Response;

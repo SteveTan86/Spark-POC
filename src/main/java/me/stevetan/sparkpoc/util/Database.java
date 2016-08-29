@@ -1,4 +1,4 @@
-package me.stevetan.sparkpoc.utils;
+package me.stevetan.sparkpoc.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
