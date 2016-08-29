@@ -2,34 +2,28 @@ package me.stevetan.sparkpoc.controller;
 
 import me.stevetan.sparkpoc.model.User;
 import me.stevetan.sparkpoc.util.Database;
-import org.hibernate.Session;
 import spark.Request;
 import spark.Response;
+
+import javax.persistence.EntityManager;
 
 /**
  * Created by stevetan on 19/8/16.
  */
 public class Index {
     public static Object handleHelloWorld(Request request, Response response) {
+        EntityManager entityManager = Database.getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
 
-        try {
-            Session session = Database.getSessionFactory().openSession();
+        User user = User
+                .builder()
+                .name("Steve")
+                .build();
 
-            session.beginTransaction();
+        entityManager.persist(user);
+        entityManager.getTransaction().commit();
+        entityManager.close();
 
-            User user = User
-                    .builder()
-                    .name("Steve")
-                    .build();
-
-            session.save(user);
-            session.getTransaction().commit();
-
-            return user;
-        } catch (Exception ex) {
-            ex.printStackTrace();
-
-            throw ex;
-        }
+        return user;
     }
 }

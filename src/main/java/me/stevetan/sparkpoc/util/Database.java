@@ -1,31 +1,25 @@
 package me.stevetan.sparkpoc.util;
 
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 /**
  * Created by stevetan on 23/8/16.
  */
 public class Database {
-    private static final SessionFactory sessionFactory = buildSessionFactory();
+    private static final EntityManagerFactory entityManagerFactory = buildEntityManagerFactory();
 
-    private static SessionFactory buildSessionFactory() {
-        try {
-            // Create the SessionFactory from hibernate.cfg.xml
-            return new Configuration().configure().buildSessionFactory();
-        } catch (Throwable ex) {
-            // Make sure you log the exception, as it might be swallowed
-            System.err.println("Initial SessionFactory creation failed." + ex);
-            throw new ExceptionInInitializerError(ex);
-        }
+    private static EntityManagerFactory buildEntityManagerFactory() {
+        // TODO Perhaps we should change PU name to follow app namespace?
+        return Persistence.createEntityManagerFactory("SparkPU");
     }
 
-    public static SessionFactory getSessionFactory() {
-        return sessionFactory;
+    public static EntityManagerFactory getEntityManagerFactory() {
+        return entityManagerFactory;
     }
 
     public static void shutdown() {
         // Close caches and connection pools
-        getSessionFactory().close();
+        getEntityManagerFactory().close();
     }
 }
