@@ -7,7 +7,7 @@ Skeleton code structure for [Spark micro framework](http://sparkjava.com/).
 * Production ready 
 * Configurable via env variables
 * CORS built in (***TODO***)
-* Hibernate [ORM](http://hibernate.org/orm/) and [Validator](http://hibernate.org/validator/) built in with [Lombok](https://projectlombok.org/) (***TODO***)
+* Using JPA API via Hibernate [ORM](http://hibernate.org/orm/) and [Validator](http://hibernate.org/validator/) built in with [Lombok](https://projectlombok.org/) (***TODO***)
 * Authentication Methods and User Access Control (***TODO***)
     * HTTP Basic Authentication
     * OAuth 2.0 server and client features (***TODO***)
